@@ -40,6 +40,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "A very secure FTP daemon";
+    homepage = "https://security.appspot.com/vsftpd.html";
     license = licenses.gpl2;
     maintainers = with maintainers; [ peterhoeg ];
     platforms = platforms.linux;
