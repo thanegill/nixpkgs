@@ -73,6 +73,10 @@ in stdenv.mkDerivation (finalAttrs: {
     "USE_PROMEX=yes"
   ] ++ [ "CC=${stdenv.cc.targetPrefix}cc" ];
 
+  postInstall = ''
+    install -Dm644 -t $out/share/errorfiles examples/errorfiles/*.http
+  '';
+
   enableParallelBuilding = true;
 
   passthru.tests.haproxy = nixosTests.haproxy;
